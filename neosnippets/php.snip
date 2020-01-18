@@ -1,18 +1,20 @@
 # Debug message {{{
+snippet elg
+	error_log('[' . __CLASS__ . ':' . __FUNCTION__ . ':' . __LINE__ . ']' . print_r(${0}, true) . ',');
 snippet log
-	echo('['. __class__ .':'. __function__ .':'. __line__ .']$0:'. print_r(${0}, true) ."\n");
+	echo('[' . __CLASS__ . ':' . __FUNCTION__ . ':' . __LINE__ . ']' . print_r(${0}, true) . ",\n");
 snippet logg
-	echo('['. __class__ .':'. __function__ .':'. __line__ .']$0:'. print_r(${0}, true) ."\n");exit(9);
+	echo('[' . __CLASS__ . ':' . __FUNCTION__ . ':' . __LINE__ . ']' . print_r(${0}, true) . ",\n");exit(9);
 snippet logmsg
-	'['. __class__ .':'. __function__ .':'. __line__ .']:'
+	'[' . __CLASS__ . ':' . __FUNCTION__ . ':' . __LINE__ . ']:'
 snippet logbr
-	echo('['. __class__ .':'. __function__ .':'. __line__ .']$0:'. print_r(${0}, true) .'<br />');
+	echo('[' . __CLASS__ . ':' . __FUNCTION__ . ':' . __LINE__ . ']' . print_r(${0}, true) . ',<br />');
 snippet logfile
-	file_put_contents('/tmp/sniplog', '<'.date('Y-m-d H:i:s').'>['. __class__ .':'. __function__ .':'. __line__ .']$0:'. print_r(${0}, true) ."\n",FILE_APPEND|LOCK_EX);
+	file_put_contents('/tmp/sniplog', '<' . date('Y-m-d H:i:s') . '>[' . __CLASS__ . ':' . __FUNCTION__ . ':' . __LINE__ . ']' . print_r(${0}, true) . ",\n", FILE_APPEND|LOCK_EX);
 snippet cilog
-	log_message('debug', '['. __class__ .':'. __function__ .':'. __line__ .']$0:'. print_r(${0}, true));
+	log_message('debug', '[' . __CLASS__ . ':' . __FUNCTION__ . ':' . __LINE__ . ']' . print_r(${0}, true) . ',');
 snippet flog
-	\Log::error('['. __class__ .':'. __function__ .':'. __line__ .']$0:'. print_r(${0}, true));
+	\Log::error('[' . __CLASS__ . ':' . __FUNCTION__ . ':' . __LINE__ . ']' . print_r(${0}, true) . ',');
 snippet pd
 	echo('<pre>');var_dump(${0:variable});echo('</pre>');
 snippet pdd
@@ -22,7 +24,7 @@ snippet vd
 snippet vdd
 	var_dump(${0:variable});exit(9);
 snippet logtest
-	fwrite(STDERR, "\n[". __class__ .':'. __function__ .':'. __line__ .']$0:'. print_r(${0}, true) ."\n");
+	fwrite(STDERR, "\n[" . __CLASS__ . ':' . __FUNCTION__ . ':' . __LINE__ . ']' . print_r(${0}, true) . ",\n");
 #}}}
 
 # Reserved word {{{
